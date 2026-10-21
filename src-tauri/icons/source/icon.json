@@ -1,0 +1,7 @@
+{
+  "default": "logo.svg",
+  "android_bg": "android-bg.svg",
+  "android_fg": "android-fg.svg",
+  "android_fg_scale": 66,
+  "android_monochrome": "android-mono.svg"
+}

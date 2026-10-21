@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<g transform="translate(256 256) scale(0.64) translate(-261 -252)">
+  <g fill="#2563EB">
+    <rect x="80" y="328" width="52" height="104" rx="12"/>
+    <rect x="152" y="264" width="52" height="168" rx="12"/>
+    <rect x="224" y="296" width="52" height="136" rx="12"/>
+    <rect x="296" y="264" width="52" height="168" rx="12"/>
+  </g>
+  <polyline points="106,288 178,224 250,256 340,196" fill="none" stroke="#DBEAFE" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#DBEAFE">
+    <ellipse cx="352" cy="200" rx="40" ry="33" transform="rotate(-20 352 200)"/>
+    <rect x="373" y="72" width="18" height="124"/>
+    <path d="M373 72H391C394 108 450 122 442 186C432 154 414 142 391 138Z"/>
+  </g>
+</g>
+</svg>

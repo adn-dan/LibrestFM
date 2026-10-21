@@ -1,0 +1,294 @@
+@import "./fonts.css";
+
+/* Mise en page : barre latérale fixe (navigation, recherche) | contenu en grille de panneaux */
+:root {
+  --bg: #f6f7f9;
+  --surface: #ffffff;
+  --line: #e1e4ea;
+  --fg: #12151b;
+  --fg-2: #4b5260;
+  --fg-3: #737a8a;
+  --accent: #2a5bd7;
+  --chip: #eef1f7;
+  --danger: #c23b3b;
+  --s1: #2a78d6;
+  --s2: #eb6834;
+  --s3: #1baf7a;
+  --s4: #6250d6;
+  --seq-0: #e8f1fd;
+  --seq-1: #9ec5f4;
+  --seq-2: #5598e7;
+  --seq-3: #256abf;
+  --seq-4: #0d366b;
+  --font-display: "Familjen Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+  color-scheme: light;
+}
+/* Sombre : quand le système l'est et qu'on n'a pas forcé le clair, ou quand on le force (Paramètres). */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #111317;
+    --surface: #1a1d23;
+    --line: #2b2f38;
+    --fg: #eef0f4;
+    --fg-2: #b6bcc8;
+    --fg-3: #8a91a0;
+    --accent: #7da2ff;
+    --chip: #242832;
+    --danger: #e66767;
+    --s1: #3987e5;
+    --s2: #d95926;
+    --s3: #199e70;
+    --s4: #9085e9;
+    --seq-0: #1d2633;
+    --seq-1: #184f95;
+    --seq-2: #2a78d6;
+    --seq-3: #5598e7;
+    --seq-4: #b7d3f6;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #111317;
+  --surface: #1a1d23;
+  --line: #2b2f38;
+  --fg: #eef0f4;
+  --fg-2: #b6bcc8;
+  --fg-3: #8a91a0;
+  --accent: #7da2ff;
+  --chip: #242832;
+  --danger: #e66767;
+  --s1: #3987e5;
+  --s2: #d95926;
+  --s3: #199e70;
+  --s4: #9085e9;
+  --seq-0: #1d2633;
+  --seq-1: #184f95;
+  --seq-2: #2a78d6;
+  --seq-3: #5598e7;
+  --seq-4: #b7d3f6;
+  color-scheme: dark;
+}
+
+/* Couleur principale (Paramètres) : bleu par défaut, sinon data-accent sur <html>. */
+:root[data-accent="violet"] {
+  --accent: #5b3fd0;
+  --s1: #6d55e0;
+  --seq-0: #efecfd;
+  --seq-1: #c6bcf6;
+  --seq-2: #9a88ec;
+  --seq-3: #6a4fd9;
+  --seq-4: #34237a;
+  --s4: #2a78d6;
+}
+:root[data-accent="green"] {
+  --accent: #17784f;
+  --s1: #1f9e6a;
+  --seq-0: #e6f6ee;
+  --seq-1: #a6dfc2;
+  --seq-2: #5cbf8f;
+  --seq-3: #23905f;
+  --seq-4: #0c4a30;
+  --s3: #2a78d6;
+}
+:root[data-accent="orange"] {
+  --accent: #b44a12;
+  --s1: #e0662a;
+  --seq-0: #fdeee5;
+  --seq-1: #f7c3a3;
+  --seq-2: #ee9461;
+  --seq-3: #cc5a1f;
+  --seq-4: #6b2a0a;
+  --s2: #2a78d6;
+}
+:root[data-accent="rose"] {
+  --accent: #b42a70;
+  --s1: #d13f86;
+  --seq-0: #fceaf3;
+  --seq-1: #f4b6d4;
+  --seq-2: #e679ae;
+  --seq-3: #c2307a;
+  --seq-4: #5e1238;
+}
+@media (prefers-color-scheme: dark) {
+  :root[data-accent="violet"]:not([data-theme="light"]) {
+    --accent: #a89bff;
+    --s1: #8b7bf0;
+    --seq-0: #221f33;
+    --seq-1: #3d2f8f;
+    --seq-2: #6a55e0;
+    --seq-3: #9a88ec;
+    --seq-4: #d6cffa;
+    --s4: #3987e5;
+  }
+}
+:root[data-theme="dark"][data-accent="violet"] {
+  --accent: #a89bff;
+  --s1: #8b7bf0;
+  --seq-0: #221f33;
+  --seq-1: #3d2f8f;
+  --seq-2: #6a55e0;
+  --seq-3: #9a88ec;
+  --seq-4: #d6cffa;
+  --s4: #3987e5;
+}
+@media (prefers-color-scheme: dark) {
+  :root[data-accent="green"]:not([data-theme="light"]) {
+    --accent: #5fd39b;
+    --s1: #22a872;
+    --seq-0: #17261f;
+    --seq-1: #145c3d;
+    --seq-2: #1f9e6a;
+    --seq-3: #5cbf8f;
+    --seq-4: #bfeed6;
+    --s3: #3987e5;
+  }
+}
+:root[data-theme="dark"][data-accent="green"] {
+  --accent: #5fd39b;
+  --s1: #22a872;
+  --seq-0: #17261f;
+  --seq-1: #145c3d;
+  --seq-2: #1f9e6a;
+  --seq-3: #5cbf8f;
+  --seq-4: #bfeed6;
+  --s3: #3987e5;
+}
+@media (prefers-color-scheme: dark) {
+  :root[data-accent="orange"]:not([data-theme="light"]) {
+    --accent: #ff9f6b;
+    --s1: #e0662a;
+    --seq-0: #2c1f18;
+    --seq-1: #7a3412;
+    --seq-2: #d95926;
+    --seq-3: #f08a52;
+    --seq-4: #fbd2b8;
+    --s2: #3987e5;
+  }
+}
+:root[data-theme="dark"][data-accent="orange"] {
+  --accent: #ff9f6b;
+  --s1: #e0662a;
+  --seq-0: #2c1f18;
+  --seq-1: #7a3412;
+  --seq-2: #d95926;
+  --seq-3: #f08a52;
+  --seq-4: #fbd2b8;
+  --s2: #3987e5;
+}
+@media (prefers-color-scheme: dark) {
+  :root[data-accent="rose"]:not([data-theme="light"]) {
+    --accent: #ff8fc4;
+    --s1: #e0559a;
+    --seq-0: #2c1922;
+    --seq-1: #7c2252;
+    --seq-2: #c93a82;
+    --seq-3: #e679ae;
+    --seq-4: #f8cde2;
+  }
+}
+:root[data-theme="dark"][data-accent="rose"] {
+  --accent: #ff8fc4;
+  --s1: #e0559a;
+  --seq-0: #2c1922;
+  --seq-1: #7c2252;
+  --seq-2: #c93a82;
+  --seq-3: #e679ae;
+  --seq-4: #f8cde2;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  line-height: 1.5;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+h1, h2, h3 { font-family: var(--font-display); margin: 0; text-wrap: balance; }
+h1 { font-size: clamp(26px, 3.6vw, 40px); font-weight: 700; line-height: 1.08; letter-spacing: -0.02em; }
+h2 { font-size: 17px; font-weight: 500; }
+button { font: inherit; cursor: pointer; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 18px;
+  display: grid;
+  gap: 12px;
+  align-content: start;
+  min-width: 0;
+}
+.panel-head { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; justify-content: space-between; }
+.muted { color: var(--fg-3); }
+.small { font-size: 12.5px; }
+.eyebrow { font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--fg-3); }
+.mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+
+.btn {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--fg);
+  border-radius: 7px;
+  padding: 7px 14px;
+}
+.btn:hover { border-color: var(--fg-3); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.btn.danger { color: var(--danger); }
+.btn:disabled { opacity: 0.5; cursor: default; }
+
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 7px; overflow: hidden; }
+.seg button { border: 0; background: transparent; color: var(--fg-2); padding: 6px 12px; font-size: 13px; }
+.seg button[aria-pressed="true"] { background: var(--chip); color: var(--fg); font-weight: 500; }
+
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 7px 6px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+th { font-size: 12px; font-weight: 500; color: var(--fg-3); text-transform: uppercase; letter-spacing: 0.05em; }
+td.num, th.num { text-align: right; font-family: var(--font-mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.tablewrap { overflow-x: auto; }
+/* Android : pas de zoom de la page au pincement (les graphiques gardent le leur). */
+html:has(.shell.android) { touch-action: pan-x pan-y; }
+
+/* Android : zones à toucher d'au moins 40 px (boutons, listes déroulantes, champs). */
+.android main button,
+.android main select,
+.android main input:not([type="checkbox"]):not([type="radio"]),
+.android aside input {
+  min-height: 40px;
+}
+.android main .seg button { padding-inline: 14px; }
+
+/* Android, écran étroit : une colonne, jamais plus large que l'écran (les grilles à deux
+   colonnes de 360 ou 380 px minimum faisaient déborder les pages sur 320 à 390 px). */
+@media (max-width: 900px) {
+  .android main .page { grid-template-columns: minmax(0, 1fr); }
+  .android main .two, .android main .tops, .android main .groups { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* Android, écran étroit : un tableau « stack » devient une fiche par ligne (étiquette : valeur). */
+@media (max-width: 900px) {
+  .android table.stack thead { display: none; }
+  .android table.stack, .android table.stack tbody, .android table.stack tr { display: block; }
+  .android table.stack tr { padding: 10px 0; border-bottom: 1px solid var(--line); }
+  .android table.stack td { display: flex; justify-content: space-between; gap: 12px; border: 0; padding: 2px 0; text-align: right; }
+  .android table.stack td[data-label]::before { content: attr(data-label); color: var(--fg-3); font-family: var(--font-body); font-size: 12.5px; text-align: left; }
+  .android table.stack td:first-child { display: block; text-align: left; font-weight: 500; }
+  .android table.stack td:last-child { justify-content: flex-start; padding-top: 8px; }
+}
+
+.kpis { display: flex; flex-wrap: wrap; gap: 10px 32px; }
+.kpi dt { font-size: 12px; color: var(--fg-3); text-transform: uppercase; letter-spacing: 0.06em; }
+.kpi dd { margin: 0; font-family: var(--font-mono); font-size: 22px; font-variant-numeric: tabular-nums; }
+.kpi dd small { font-size: 12px; color: var(--fg-3); }
+
+.empty { padding: 32px; text-align: center; color: var(--fg-2); display: grid; gap: 12px; justify-items: center; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}

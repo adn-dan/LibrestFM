@@ -1,0 +1,31 @@
+[
+ {
+  "ts": "2024-03-10T20:04:13Z",
+  "ms_played": 248000,
+  "master_metadata_track_name": "Get Lucky",
+  "master_metadata_album_artist_name": "Daft Punk",
+  "master_metadata_album_album_name": "Random Access Memories",
+  "spotify_track_uri": "spotify:track:69kOkLUCkxIZYexIgSG8rq"
+ },
+ {
+  "ts": "2024-04-02T17:00:00Z",
+  "ms_played": 10000,
+  "master_metadata_track_name": "Around the World",
+  "master_metadata_album_artist_name": "Daft Punk",
+  "master_metadata_album_album_name": "Homework"
+ },
+ {
+  "ts": "2024-04-02T17:30:00Z",
+  "ms_played": 1800000,
+  "master_metadata_track_name": null,
+  "master_metadata_album_artist_name": null,
+  "episode_name": "Un podcast"
+ },
+ {
+  "ts": "2024-04-02T18:07:07Z",
+  "ms_played": 427000,
+  "master_metadata_track_name": "La femme d'argent",
+  "master_metadata_album_artist_name": "Air",
+  "master_metadata_album_album_name": "Moon Safari"
+ }
+]
